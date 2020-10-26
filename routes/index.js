@@ -15,15 +15,15 @@ router
 })
 
 .get('/financy/:name', (req, res)=>{
-  let message = `ima vakva firma #${req.params.name}`
+  let message = `ima vakva kompanija #${req.params.name}`
   const finans = financy.find(finans => {
     return finans.name == req.params.name
   })
-  if(!finans){
-    message= `nema vakva firma #${req.params.name}`
+  if (!finans) {
+    message= `nema vakva kompanija #${req.params.name}`
   }
   res.send({
-    message: `ima vakav firma #${req.params.name}`,
+    message: message, //`ima vakav kompanija #${req.params.name}`,
     item: finans
   })
 })
